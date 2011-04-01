@@ -1,0 +1,29 @@
+pre {
+    margin-left:auto;
+}
+pre.sh_sourceCode {
+    padding: 20px;
+    color: #DD7E5E;
+    background:#111;
+    border-radius:6px;
+}
+pre.sh_sourceCode span.sh_string { color: #9daa7e; }
+pre.sh_sourceCode span.sh_keyword { color: #d5b57c; font-weight:normal; }
+pre.sh_sourceCode span.sh_comment { color: #726d73; }
+pre.sh_sourceCode span.sh_symbol, pre.sh_sourceCode span.sh_cbracket { color: #a78353; }
+pre.sh_sourceCode span.sh_function { color: #889dbc; font-weight:normal;  }
+pre.sh_sourceCode span.sh_variable { color: #889dbc; }
+pre.sh_sourceCode span.sh_number { color: #dd7e5e; }
+
+div.commandline > pre {
+    padding: 20px;
+    background:#111;
+    border-radius:6px;
+}
+
+div.commandline > pre code.command {
+    color: #eee;
+}
+div.commandline > pre code.result {
+    color: #bbb;
+}

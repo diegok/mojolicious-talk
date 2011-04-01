@@ -1,0 +1,1060 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Mojolicious 1.0</title>
+
+  <link rel="stylesheet" href="./css/reset.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/showoff.css" type="text/css"/>
+
+  <script type="text/javascript" src="./js/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="./js/jquery-print.js"></script>
+  <script type="text/javascript" src="./js/jquery.batchImageLoad.js"></script>
+
+  <script type="text/javascript" src="./js/jquery.doubletap-0.1.js"></script>
+
+  <script type="text/javascript" src="./js/fg.menu.js"></script>
+  <script type="text/javascript" src="./js/showoff.js"></script>
+  <script type="text/javascript" src="./js/jTypeWriter.js"> </script>
+  <script type="text/javascript" src="./js/sh_main.min.js"></script>
+  <script type="text/javascript" src="./js/core.js"></script>
+  <script type="text/javascript" src="./js/showoffcore.js"></script>
+
+  <link type="text/css" href="./css/fg.menu.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/theme/ui.all.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/sh_style.css" rel="stylesheet" >
+
+  
+    <link rel="stylesheet" href="file/this.css" type="text/css"/>
+  
+
+  
+
+  <script type="text/javascript">
+  $(function(){
+    setupPreso(false, './');
+  });
+  </script>
+</head>
+
+<body>
+
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="navmenu"><span class="ui-icon ui-icon-triangle-1-s"></span>slides</a>
+<div id="navigation" class="hidden"></div>
+
+<div id="help">
+  <table>
+    <tr><td class="key">space, &rarr;</td><td>next slide</td></tr>
+    <tr><td class="key">&larr;</td><td>previous slide</td></tr>
+    <tr><td class="key">d</td><td>debug mode</td></tr>
+    <tr><td class="key">## &lt;ret&gt;</td><td>go to slide #</td></tr>
+    <tr><td class="key">c</td><td>table of contents (vi)</td></tr>
+    <tr><td class="key">f</td><td>toggle footer</td></tr>
+    <tr><td class="key">r</td><td>reload slides</td></tr>
+    <tr><td class="key">z</td><td>toggle help (this)</td></tr>
+  </table>
+</div>
+
+<div class="buttonNav">
+  <input type="submit" onClick="prevStep();" value="prev"/>
+  <input type="submit" onClick="nextStep();" value="next"/>
+</div>
+
+<div id="preso">loading presentation...</div>
+<div id="footer">
+  <span id="slideInfo"></span>
+  <span id="debugInfo"></span>
+</div>
+
+<div id="slides" class="offscreen" style="display:none;">
+<div class="slide" data-transition="none"><div class="content" ref="intro/01_slide/1">
+<h1>Mojolicious 1.0</h1>
+
+<h2>The web in a box</h2>
+
+<h3>Madrid.pm</h3>
+
+<h3>23/03/2011</h3></div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="intro/01_slide/2">
+<h1>Mojolicious 1.x</h1>
+
+<h2>Duct Tape For The HTML5 Web</h2>
+
+<h3>Madrid.pm</h3>
+
+<h3>23/03/2011</h3></div>
+</div><div class="slide" data-transition="scrollLeft"><div class="content" ref="intro/01_slide/3">
+<pre class="sh_Perl"><code>use Mojolicious::Lite;
+
+get '/' =&gt; sub { 
+    shift-&gt;render( json =&gt; { 
+        title    =&gt; 'Mojolicious 1.x', 
+        subtitle =&gt; [ 
+            'The web in a box', 
+            'Duct Tape For The HTML5 Web' 
+        ],
+        where    =&gt; 'Madrid.pm',
+        when     =&gt; '23/03/2011',
+        who      =&gt; 'diegok'
+    }); 
+};
+
+app-&gt;start;</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="intro/01_slide/4">
+<h1>Autor</h1>
+
+<h2>Sebastian Riedel</h2>
+
+<p><img src="file:///Users/diegok/talks/mojolicious/intro/tweet_released.png" width="758" height="422" alt="Release message on twitter"/></p></div>
+</div><div class="slide" data-transition="scrollDown"><div class="content bullets incremental" ref="intro/01_slide/5">
+<h1>Se hizo cargo de Maypole</h1>
+
+<ul>
+<li>Quizo hacer cambios radicales</li>
+<li><strong>No le dejaron</strong></li>
+</ul>
+</div>
+</div><div class="slide" data-transition="scrollDown"><div class="content bullets incremental" ref="intro/01_slide/6">
+<h1>Cre&#xF3; Catalyst</h1>
+
+<ul>
+<li>Quizo hacer cambios radicales</li>
+<li><strong>No le dejaron</strong></li>
+</ul>
+</div>
+</div><div class="slide" data-transition="scrollDown"><div class="content bullets incremental" ref="intro/01_slide/7">
+<h1>Mojolicious</h1>
+
+<h2>Pegamento para la web del presente/futuro</h2>
+
+<ul>
+<li>Cada vez mas codigo en el cliente (JS)</li>
+<li>Cada vez menos codigo en el servidor</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="intro/01_slide/8">
+<h1>Mojolicious</h1>
+
+<h2>The box</h2>
+
+<p><img src="file:///Users/diegok/talks/mojolicious/intro/blocks.png" width="565" height="296" alt="Mojolicious classes"/></p></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content smbullets" ref="intro/01_slide/9">
+<h1>Mojolicious</h1>
+
+<h2>Features</h2>
+
+<ul>
+<li>Framework web completo (MVC Server + Client)</li>
+<li>Modo simple ideal para prototipado (Mojolicious::Lite)</li>
+<li>Rutas RESTful</li>
+<li>Templates "perl-ish"</li>
+<li>Cookies firmadas</li>
+<li>Manejo de sesiones</li>
+<li>Internacionalizacion (i18n)</li>
+<li>Framework para testing</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="scrollUp"><div class="content smbullets" ref="intro/01_slide/10">
+<h1>Mojolicious</h1>
+
+<h2>+ Features</h2>
+
+<ul>
+<li>HTTP 1.1</li>
+<li>Websockets / Comet / chunking</li>
+<li>Builtin async IO web server</li>
+<li>Servidor de ficheros est&#xE1;ticos</li>
+<li>Hot deployment</li>
+<li>CGI / FastCGI / PSGI</li>
+<li>JSON y HTML5 parser con selectores CSS3</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="scrollUp"><div class="content bullets" ref="intro/01_slide/11">
+<h1>Mojolicious</h1>
+
+<h2>+ Features</h2>
+
+<ul>
+<li>C&#xF3;digo limpio y orientado a objetos</li>
+<li>Solo depende de perl 5.8.7</li>
+<li>Pensado para que sea facil de migrar a perl6</li>
+<li><strong>Muy facil</strong> de instalar</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="scrollLeft"><div class="content commandline incremental" ref="intro/01_slide/12">
+<h1>Instalaci&#xF3;n de la &#xFA;ltima versi&#xF3;n</h1>
+
+<pre><code><code class="command">$ curl -L cpanmin.us | perl - http://latest.mojolicio.us</code><code class="result">
+--&gt; Working on http://latest.mojolicio.us
+Fetching http://latest.mojolicio.us ... OK
+Configuring kraih-mojo-765693b ... OK
+Building and testing http://latest.mojolicio.us ... OK
+Successfully installed http://latest.mojolicio.us
+</code></code></pre></div>
+</div><div class="slide" data-transition="fade"><div class="content commandline" ref="intro/01_slide/13">
+<h1>Instalaci&#xF3;n desde cpan</h1>
+
+<pre><code><code class="command">$ cpan Mojolicious</code><code class="result">
+...
+</code></code></pre></div>
+</div><div class="slide" data-transition="fade"><div class="content commandline" ref="intro/01_slide/14">
+<h1>Embebido en el proyecto</h1>
+
+<h3>Pureperl &amp; no deps</h3>
+
+<pre><code><code class="command">$ git init</code><code class="result">
+...
+
+</code><code class="command">$ mkdir contrib</code><code class="result">
+
+</code><code class="command">$ git submodule add http://github.com/kraih/mojo.git contrib/mojo</code><code class="result">
+Cloning into contrib/mojo...
+...
+</code></code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content commandline incremental" ref="intro/01_slide/15">
+<h1>Crear una aplicacion "Lite"</h1>
+
+<pre><code><code class="command">$ mojo generate lite_app hello.pl</code><code class="result">
+  [exist] /mojo_talk/examples
+  [write] /mojo_talk/examples/hello.pl
+  [chmod] hello.pl 744
+</code></code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_slide/16">
+<h2>hello.pl (1/2)</h2>
+
+<pre class="sh_Perl"><code>#!/usr/bin/env perl
+
+use Mojolicious::Lite;
+
+# Documentation browser under "/perldoc" 
+# (this plugin requires Perl 5.10)
+plugin 'pod_renderer';
+
+get '/welcome' =&gt; sub {
+    my $self = shift;
+    $self-&gt;render('index');
+};
+
+app-&gt;start;
+
+# continua ...</code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/17">
+<h2>hello.pl (2/2)</h2>
+
+<pre class="sh_Perl"><code>__DATA__
+
+@@ index.html.ep
+% layout 'default';
+% title 'Welcome';
+Welcome to Mojolicious!
+
+@@ layouts/default.html.ep
+&lt;!doctype html&gt;&lt;html&gt;
+&lt;head&gt;&lt;title&gt;&lt;%= title %&gt;&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;&lt;%== content %&gt;&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+</div><div class="slide" data-transition="fade"><div class="content commandline" ref="intro/01_slide/18">
+<h1>Rutas</h1>
+
+<pre><code><code class="command">$./hello.pl routes</code><code class="result">
+/perldoc   (?-xism:^/perldoc)
+/welcome   (?-xism:^/welcome)
+</code></code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content commandline incremental" ref="intro/01_slide/19">
+<h1>Run</h1>
+
+<pre><code><code class="command">$ ./hello.pl daemon --reload</code><code class="result">
+Server available at http://*:3000.
+</code></code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_slide/20">
+<h1>+ rutas para hello.pl</h1>
+
+<pre class="sh_Perl"><code>get '/' =&gt; sub { shift-&gt;render( text =&gt; 'Hello World!' ) };
+
+get '/hello/:nombre' =&gt; sub { 
+    my $self = shift;
+    my $name = $self-&gt;param('nombre');
+    $self-&gt;render( text =&gt; "Hello $name!" ); 
+};
+
+post '/hello' =&gt; sub {
+    my $self = shift;
+    my $name = $self-&gt;param('nombre');
+    $self-&gt;render( text =&gt; "Hello $name!" ); 
+};</code></pre></div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="intro/01_slide/21">
+<pre class="sh_Perl"><code>#!/usr/bin/env perl
+use Mojolicious::Lite;
+plugin 'pod_renderer';
+
+get '/welcome' =&gt; sub { shift-&gt;render('index') };
+get '/' =&gt; sub { 
+    shift-&gt;render( text =&gt; 'Hello World!' ) 
+};
+get '/hello/:nombre' =&gt; \&amp;hello;
+post '/hello'        =&gt; \&amp;hello; 
+app-&gt;start;
+
+sub hello { 
+    my $self = shift;
+    my $name = $self-&gt;param('nombre');
+    $self-&gt;render( text =&gt; "Hello $name!" ); 
+};
+
+__DATA__
+...</code></pre></div>
+</div><div class="slide" data-transition="fade"><div class="content commandline" ref="intro/01_slide/22">
+<pre><code><code class="command">$ ./hello.pl routes</code><code class="result">
+/perldoc         (?-xism:^/perldoc)
+/welcome         (?-xism:^/welcome)
+/                (?-xism:^(?:/)?)
+/hello/:nombre   (?-xism:^/hello/([^\/\.]+))
+/hello           (?-xism:^/hello)
+</code></code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_slide/23">
+<h1>Stash</h1>
+
+<pre class="sh_Perl"><code>get '/bar' =&gt; sub {
+    my $self = shift;
+    $self-&gt;stash(one =&gt; 23);
+    $self-&gt;render('baz', two =&gt; 24);
+};
+
+__DATA__
+
+@@ baz.html.ep
+The magic numbers 
+are &lt;%= $one %&gt; and &lt;%= $two %&gt;.</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_slide/24">
+<h1>Placeholders</h1>
+
+<pre class="sh_Perl"><code># : &lt;- todo menos / y .
+get '/(:captura)xx/foo' =&gt; \&amp;show;
+
+# . &lt;- todo menos /
+get '/(.captura)/hello' =&gt; \&amp;show;
+
+# * &lt;- todo
+get '/hello/(*captura)' =&gt; \&amp;show;
+
+sub show { shift-&gt;render('groovy') };
+
+__DATA__
+
+@@ groovy.html.ep
+La ruta ha capturado: &lt;%= $captura %&gt;.</code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/25">
+<h1>HTTP methods</h1>
+
+<pre class="sh_Perl"><code>get  '/bye' =&gt; sub { };
+post '/bye' =&gt; sub { };
+
+any [qw/get post delete/] =&gt; '/bye' =&gt; sub { 
+    shift-&gt;render( text =&gt; 'bye!' ) 
+};
+
+any '/baz' =&gt; sub {
+    my $self   = shift;
+    my $method = $self-&gt;req-&gt;method;
+    $self-&gt;render(
+      text =&gt; "You called /baz with $method"
+    );
+};</code></pre></div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="intro/01_slide/26">
+<h1>Just router helpers</h1>
+
+<pre class="sh_Perl"><code>get '/foo/:bar' =&gt; sub {
+    my $self = shift;
+    my $bar  = $self-&gt;param('bar');
+    $self-&gt;render( text =&gt; "Hello $bar!" );
+};</code></pre></div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="intro/01_slide/27">
+<h1>The real mojo</h1>
+
+<pre class="sh_Perl"><code>app-&gt;routes-&gt;route('/foo/:bar')
+   -&gt;via('get')
+   -&gt;to(cb =&gt; sub {
+        my $self = shift;
+        my $bar  = $self-&gt;param('bar');
+        $self-&gt;render( 
+            text =&gt; "Hello $bar!" 
+        );
+   });</code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/28">
+<h1>Route Constraints</h1>
+
+<pre class="sh_Perl"><code># /* (digits)
+any '/:foo' =&gt; [foo =&gt; qr/\d+/] =&gt; sub {
+    my $self = shift;
+    my $foo  = $self-&gt;param('foo');
+    $self-&gt;render(
+        text =&gt; "Got digits -&gt; $foo"
+    );
+};
+
+# /* (everything else)
+any '/:bar' =&gt; [bar =&gt; qr/.*/] =&gt; sub {
+    my $self = shift;
+    my $bar  = $self-&gt;param('bar');
+    $self-&gt;render( text =&gt; "Got -&gt; $bar");
+};</code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/29">
+<h1>Optional placeholder</h1>
+
+<h2>with default value</h2>
+
+<pre class="sh_Perl"><code># /hello/*
+get '/hello/:name' 
+    =&gt; {name =&gt; 'Madrid.pm'} =&gt; sub {
+    my $self = shift;
+    my $name = $self-&gt;param('name');
+    $self-&gt;render( text =&gt; "Hello $name" );
+};</code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/30">
+<h1>Un poco de todo</h1>
+
+<pre class="sh_Perl"><code># /everything/*?name=*
+get '/everything/:stuff' 
+    =&gt; [stuff =&gt; qr/\d+/] 
+    =&gt; {stuff =&gt; 23} =&gt; sub {
+        shift-&gt;render('welcome');
+    };
+
+__DATA__
+
+@@ welcome.html.ep
+Stuff is &lt;%= $stuff %&gt;.
+Query param name is &lt;%= param 'name' %&gt;.</code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/31">
+<h1>Condiciones</h1>
+
+<pre class="sh_Perl"><code># /foo
+get '/foo' =&gt; (agent =&gt; qr/Firefox/) 
+  =&gt; sub {
+  shift-&gt;render(
+    text =&gt; 'Congratulations, you are using a cool browser!'
+  );
+};
+
+# /foo
+get '/foo' =&gt; (agent =&gt; qr/Internet Explorer/) 
+=&gt; sub {
+  shift-&gt;render(
+    text =&gt; 'You need to upgrade to Firefox!'
+  );
+};</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_slide/32">
+<h1>under</h1>
+
+<pre class="sh_Perl"><code>under sub =&gt; {
+    # return true or false
+};</code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/33">
+<pre class="sh_Perl"><code># Authenticate based on name parameter
+under sub {
+    my $self = shift;
+    my $name = $self-&gt;param('name') || '';
+    return 1 if $name eq 'Bender';
+    $self-&gt;render('denied');
+    return;
+};
+# GET / (with authentication)
+get '/' =&gt; 'index';
+app-&gt;start;
+__DATA__;
+
+@@ denied.html.ep
+You are not Bender, permission denied!
+
+@@ index.html.ep
+Hi Bender!</code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/34">
+<pre class="sh_Perl"><code>use Mojolicious::Lite;
+
+# /foo
+under '/foo';
+
+# GET /foo/bar
+get '/bar' =&gt; sub { 
+    shift-&gt;render(text =&gt; 'bar!') 
+};
+
+# GET /foo/baz
+get '/baz' =&gt; sub { 
+    shift-&gt;render(text =&gt; 'baz!') 
+};
+
+app-&gt;start;</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_slide/35">
+<h1>Session</h1>
+
+<h2>Client side</h2>
+
+<h3>Signed cookie</h3></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/36">
+<h1>Session</h1>
+
+<pre class="sh_Perl"><code>app-&gt;secret('para la cookie');
+
+under sub {
+    if ( $self-&gt;session('user') ) {
+        return 1;
+    }
+    elsif ( my $user = $self-&gt;param('u') ) {
+        $self-&gt;session(user =&gt; $user);
+        return 1;
+    }
+    return 0;
+}</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_slide/37">
+<h1>Websockets</h1>
+
+<pre class="sh_Perl"><code>websocket '/echo' =&gt; sub {
+    my $self = shift;
+    $self-&gt;on_message(sub {
+        my ($self, $message) = @_;
+        $self-&gt;send_message("echo: $message");
+    });
+};</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_slide/38">
+<h1>Client inside</h1>
+
+<pre class="sh_Perl"><code>use Mojolicious::Lite;
+
+# Scrape information from remote sites
+post '/title' =&gt; sub {
+    my $self = shift;
+    my $url  = $self-&gt;param('url') 
+             || 'http://mojolicio.us';
+
+    $self-&gt;render( text 
+        =&gt; $self-&gt;ua-&gt;get($url)-&gt;res
+                -&gt;dom-&gt;at('head &gt; title')
+                -&gt;text
+    );
+};</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_slide/39">
+<h1>Renderer</h1></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/40">
+<h2>Renderer explicito</h2>
+
+<pre class="sh_Perl"><code># 200 OK, text/plain, 'Hello!'
+{text =&gt; 'Hello!'} 
+
+# 200 OK, application/json, '{"x":3}'
+{json =&gt; {x =&gt; 3}} 
+
+# 410 Gone, text/plain, 'Oops!'
+{text =&gt; 'Oops!', status =&gt; '410'}</code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/41">
+<h2>Renderer por defecto</h2>
+
+<pre class="sh_Perl"><code># users/list.html.ep
+{controller =&gt; 'users', action =&gt; 'list'}
+
+# foo.txt.ep
+{route =&gt; 'foo', format =&gt; 'txt'}  
+
+# foo.html.epl
+{route =&gt; 'foo', handler =&gt; 'epl'} </code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_slide/42">
+<h1>Templates</h1></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/43">
+<h1>Templates</h1>
+
+<h2>.ep</h2>
+
+<pre class="sh_Perl"><code>&lt;% Inline Perl %&gt;
+&lt;%= Expresi&#xF3;n perl como "scaped XML" %&gt;
+&lt;%== Expresi&#xF3;n perl raw %&gt;
+&lt;%# Comment, useful for debugging %&gt;
+% Perl line
+%= Perl expression line, XML escaped result
+%== Perl expression line, raw result
+%# Comment line, useful for debugging</code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/44">
+<h1>Templates</h1>
+
+<h2>.ep</h2>
+
+<pre class="sh_html"><code>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Time&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;&lt;%= localtime time %&gt;&lt;/body&gt;
+&lt;/html&gt;</code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/45">
+<h1>Templates</h1>
+
+<h2>.ep</h2>
+
+<pre class="sh_Perl"><code>&lt;% for my $framework (@$frameworks) { %&gt;
+    &lt;%= $framework %&gt; by &lt;%= $author %&gt;.
+&lt;% } %&gt;
+
+&lt;% while (my ($app, $desc) = each %$hr) { %&gt;
+    &lt;%= $app %&gt; is a &lt;%= $description %&gt;.
+&lt;% } %&gt;</code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/46">
+<h1>Default Helpers</h1>
+
+<h2>Mojolicous::Plugin::DefaultHelpers</h2>
+
+<h3>.ep</h3>
+
+<pre class="sh_Perl"><code>&lt;%= dumper [1, 2, 3] %&gt;
+&lt;%= stash 'xxx' %&gt;
+&lt;%= $xxx %&gt;</code></pre>
+
+<h3>Controller</h3>
+
+<pre class="sh_Perl"><code>my $serialized = $self-&gt;dumper([1, 2, 3]);
+$self-&gt;stash( xxx =&gt; 23 );</code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/47">
+<h1>Tag Helpers</h1>
+
+<h2>Mojolicous::Plugin::TagHelpers</h2>
+
+<pre class="sh_Perl"><code>&lt;%= tag 'div' %&gt;
+&lt;%= tag 'div', id =&gt; 'foo' %&gt;
+&lt;%= tag div =&gt; begin %&gt;Content&lt;% end %&gt;
+
+&lt;%= javascript 'script.js' %&gt;
+&lt;%= stylesheet 'foo.css' %&gt;
+
+&lt;%= form_for login =&gt; (method =&gt; 'post') =&gt; begin %&gt;
+    &lt;%= text_field 'first_name' %&gt;
+    &lt;%= check_box employed =&gt; 1, id =&gt; 'foo' %&gt;
+    &lt;%= submit_button %&gt;
+&lt;% end %&gt;</code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/48">
+<h1>Tag Helpers (cont.)</h1>
+
+<h2>Mojolicous::Plugin::TagHelpers</h2>
+
+<pre class="sh_Perl"><code>&lt;%= link_to Home =&gt; 'index' %&gt;
+&lt;%= link_to index =&gt; begin %&gt;Home&lt;% end %&gt;
+
+&lt;%= link_to index =&gt; {foo =&gt; 'bar'} 
+    =&gt; (class =&gt; 'links') =&gt; begin %&gt;
+    Home
+&lt;% end %&gt;
+
+&lt;%= link_to '/file' =&gt; begin %&gt;File&lt;% end %&gt;
+
+&lt;%= link_to url_for-&gt;query(foo =&gt; $foo) 
+    =&gt; begin %&gt; Retry &lt;% end %&gt;</code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content bullets" ref="intro/01_slide/49">
+<h1>Template plugins</h1>
+
+<ul>
+<li>MojoX::Renderer::TT</li>
+<li>MojoX::Renderer::Mason</li>
+<li>MojoX::Renderer::Xslate</li>
+<li>MojoX::Renderer::Alloy</li>
+<li>MojoX::Renderer::YAML</li>
+<li>MojoX::Renderer::XSLT</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_slide/50">
+<h1>Mojo::DOM</h1>
+
+<h2>HTML5 DOM parser</h2>
+
+<h2>CSS3 selectors</h2></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/51">
+<h1>Mojo::DOM</h1>
+
+<pre class="sh_Perl"><code>my $dom = Mojo::DOM-&gt;new;
+$dom-&gt;parse('&lt;div&gt;...&lt;/div&gt;');
+
+# Find
+say $dom-&gt;at('div#header');
+
+# Iterate
+$dom-&gt;find('div[id]')
+    -&gt;each(sub { say shift-&gt;text });
+
+# Loop
+say $e-&gt;text for $dom-&gt;find('div[id]')-&gt;each;</code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/52">
+<h1>Mojo::DOM</h1>
+
+<pre class="sh_Perl"><code># Selectors++
+$dom-&gt;find('a[href*="pm"]')
+    -&gt;each(sub { say shift-&gt;text });
+
+# Get the first 10 links
+$dom-&gt;find('a[href]')-&gt;while(sub { 
+    say shift-&gt;attrs-&gt;{href} if pop &lt; 10; 
+});
+
+# Search for a link about a specific topic
+$dom-&gt;find('a[href]')-&gt;until(sub { 
+    say $_-&gt;attrs-&gt;{href} 
+     if $_-&gt;text =~ m/mojo/; 
+});</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_slide/53">
+<h1>Mojo::UserAgent</h1>
+
+<h2>(ex Mojo::Client)</h2>
+
+<h2>Async IO HTTP 1.1</h2>
+
+<h2>WebSocket Client</h2></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/54">
+<h1>Mojo::UserAgent</h1>
+
+<pre class="sh_Perl"><code>my $ua = Mojo::UserAgent-&gt;new;
+
+# Grab the latest Mojolicious release :)
+print $ua
+      -&gt;max_redirects(3)
+      -&gt;get('http://latest.mojolicio.us')
+      -&gt;res-&gt;body;
+
+# Quick JSON request
+say $ua
+    -&gt;get('http://search.twitter.com/trends.json')
+    -&gt;res-&gt;json-&gt;{trends}-&gt;[0]-&gt;{name};</code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/55">
+<h1>Mojo::UserAgent</h1>
+
+<h2>Scrap!</h2>
+
+<pre class="sh_Perl"><code># Extract data from HTML and XML resources
+say $ua-&gt;get('mojolicio.us')
+       -&gt;res-&gt;dom-&gt;at('title')-&gt;text;
+
+# Scrape the latest headlines
+$ua-&gt;get('http://digg.com')-&gt;res
+   -&gt;dom('h3 &gt; a.story-title')
+   -&gt;each(sub {
+       say shift-&gt;text . "\n";
+   }
+);</code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/56">
+<h1>Mojo::UserAgent</h1>
+
+<h2>Form POST</h2>
+
+<pre class="sh_Perl"><code># Form post with exception handling
+my $tx = $ua-&gt;post_form(
+    'http://search.cpan.org/search' 
+     =&gt; { q =&gt; 'mojo' }
+);
+if (my $res = $tx-&gt;success) { 
+    say $res-&gt;body; 
+}
+else {
+    my ($message, $code) = $tx-&gt;error;
+    say "Error: $message ($code)";
+}</code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/57">
+<h1>Mojo::UserAgent</h1>
+
+<h2>Parallel requests</h2>
+
+<pre class="sh_Perl"><code># Parallel requests
+my $callback = sub { 
+    print pop-&gt;res-&gt;body 
+};
+
+$ua-&gt;get( 
+    'http://mojolicio.us'    =&gt; $callback
+);
+$ua-&gt;get(
+    'http://search.cpan.org' =&gt; $callback
+);
+
+$Mojo::IOLoop-&gt;start;</code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/58">
+<h1>Mojo::UserAgent</h1>
+
+<h2>Websocket request</h2>
+
+<pre class="sh_Perl"><code>$ua-&gt;websocket(
+    'ws://localhost:3000' =&gt; sub {
+        my $tx = pop;
+        $tx-&gt;on_message( sub {
+            my ($tx, $message) = @_;
+            say $message;
+        });
+        $tx-&gt;on_finish(sub { Mojo::IOLoop-&gt;stop });
+        $tx-&gt;send_message('hi there!');
+    }
+);
+
+Mojo::IOLoop-&gt;start;</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_slide/59">
+<h1>Testing</h1>
+
+<h2>Test::Mojo</h2>
+
+<h3>( Mojo::UserAgent + Mojo::DOM )</h3></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/60">
+<h1>Testing</h1>
+
+<h3>t/myapp.pl</h3>
+
+<pre class="sh_Perl"><code>use Test::More tests =&gt; 3;
+use Test::Mojo;
+
+use FindBin;
+$ENV{MOJO_HOME} = "$FindBin::Bin/../";
+require "$ENV{MOJO_HOME}/myapp.pl";
+
+my $t = Test::Mojo-&gt;new;
+$t-&gt;get_ok('/')
+  -&gt;status_is(200)
+  -&gt;content_like(qr/Funky!/);</code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/61">
+<h1>Testing</h1>
+
+<h3>t/myapp.pl</h3>
+
+<pre class="sh_Perl"><code>use Test::More tests =&gt; 3;
+use Test::Mojo;
+
+use FindBin;
+$ENV{MOJO_HOME} = "$FindBin::Bin/../";
+require "$ENV{MOJO_HOME}/myapp.pl";
+
+my $t = Test::Mojo-&gt;new;
+$t-&gt;get_ok('/fun')
+  -&gt;status_is(200)
+  -&gt;text_like(
+    'div#main &gt; h1' =&gt; qr/fun/, 
+    'Title has fun!'
+  );</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_slide/62">
+<h1>Oneliners</h1>
+
+<h2>ojo.pm</h2></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/63">
+<h1>ojo.pm</h1>
+
+<pre class="sh_Perl"><code>a =&gt; Mojolicious::Lite
+b =&gt; Mojo::ByteStream
+d =&gt; DELETE
+f =&gt; POST form
+g =&gt; GET
+h =&gt; HEAD
+p =&gt; POST
+u =&gt; PUT
+w =&gt; websocket
+x =&gt; Mojo::DOM</code></pre>
+
+<h2>http://mojolicio.us/perldoc?ojo</h2></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content commandline" ref="intro/01_slide/64">
+<h1>ojo.pm</h1>
+
+<h2>GET</h2>
+
+<pre><code><code class="command">$ perl -Mojo -E 'g("http://perldoc.perl.org/")-&gt;dom("h1")</code><code class="result">
+</code><code class="command">$                -&gt;each(sub { say pop, ". ",shift-&gt;text })'</code><code class="result">
+1. Perl programming documentation
+2. Perl 5 version 12.2 documentation
+</code></code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content commandline" ref="intro/01_slide/65">
+<h1>ojo.pm</h1>
+
+<h2>POST form</h2>
+
+<pre><code><code class="command">$ perl -Mojo -E 'f("http://forms.com/" =&gt; {option =&gt; 3})</code><code class="result">
+</code><code class="command">$                -&gt;res-&gt;dom-&gt;at(".result")-&gt;text'</code><code class="result">
+</code></code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content commandline" ref="intro/01_slide/66">
+<h1>ojo.pm</h1>
+
+<h2>Instant lite_app</h2>
+
+<pre><code><code class="command">$ perl -Mojo -e 'a("/" =&gt; {text =&gt; "Hello!"})-&gt;start' daemon</code><code class="result">
+</code></code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content commandline" ref="intro/01_slide/67">
+<h1>ojo.pm</h1>
+
+<h2>x</h2>
+
+<h3>Mojo::DOM</h3>
+
+<pre><code><code class="command">$ perl -Mojo -E "say x('&lt;div&gt;Hello!&lt;/div&gt;')-&gt;at('div')-&gt;text"</code><code class="result">
+</code></code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/68">
+<h1>Command line</h1>
+
+<pre><code>$ mojo get http://mojolicio.us 'head &gt; title'
+&lt;title&gt;Mojolicious Web Framework - Join the Perl revolution!&lt;/title&gt;
+
+$ mojo get http://mojolicio.us '*' attr id
+banner
+mojobar
+mojobar-logo
+mojobar-links
+introduction
+footer
+
+$ mojo get http://mojolicio.us 'h1, h2, h3' text
+A next generation web framework for the Perl programming language.
+Features
+Installation
+Duct Tape For The HTML5 Web
+Growing
+Want to know more?
+
+$ mojo get http://mojolicio.us 'h1, h2, h3' 3 text
+Duct Tape For The HTML5 Web
+</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="intro/01_slide/69">
+<h1>Mojolicious</h1>
+
+<h2>App</h2></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content commandline" ref="intro/01_slide/70">
+<pre><code><code class="command">$ mojolicious generate app MyApp</code><code class="result">
+[mkdir] my_app/script
+[write] my_app/script/my_app
+[chmod] my_app/script/my_app 744
+[mkdir] my_app/lib
+[write] my_app/lib/MyApp.pm
+[mkdir] my_app/lib/MyApp
+[write] my_app/lib/MyApp/Example.pm
+[mkdir] my_app/t
+[write] my_app/t/basic.t
+[mkdir] my_app/log
+[mkdir] my_app/public
+[write] my_app/public/index.html
+[mkdir] my_app/templates/layouts
+[write] my_app/templates/layouts/default.html.ep
+[mkdir] my_app/templates/example
+[write] my_app/templates/example/welcome.html.ep
+</code></code></pre></div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="intro/01_slide/71">
+<pre class="sh_Perl"><code>.
+|-- lib
+|   |-- MyApp
+|   |   `-- Example.pm
+|   `-- MyApp.pm
+|-- log
+|-- public
+|   `-- index.html
+|-- script
+|   `-- my_app
+|-- t
+|   `-- basic.t
+`-- templates
+    |-- example
+        |   `-- welcome.html.ep
+            `-- layouts
+                    `-- default.html.ep</code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/72">
+<h1>Controller</h1>
+
+<pre class="sh_Perl"><code>package MyApp::Example;
+use strict;
+use warnings;
+use base 'Mojolicious::Controller';
+
+# This action will render a template
+sub welcome {
+    my $self = shift;
+
+    # Render template "example/welcome.html.ep" with message
+    $self-&gt;render(message =&gt; 'Welcome to the Mojolicious Web Framework!');
+}
+1;</code></pre>
+
+<h3>lib/MyApp/Example.pm</h3></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/73">
+<h1>App / Rutas</h1>
+
+<pre class="sh_Perl"><code>package MyApp;
+use strict; use warnings;
+use base 'Mojolicious';
+
+sub startup {
+    my $self = shift;
+    $self-&gt;plugin('pod_renderer');
+    # Routes
+    my $r = $self-&gt;routes;
+    $r-&gt;route('/welcome')
+      -&gt;to('example#welcome', id =&gt; 1);
+}
+1;</code></pre>
+
+<h3>lib/MyApp.pm</h3></div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="intro/01_slide/74">
+<h1>Deployment</h1>
+
+<p><img src="file:///Users/diegok/talks/mojolicious/intro/hypnotoad.gif" width="480" height="387" alt="Release message on twitter"/></p></div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="intro/01_slide/75">
+<h1>Mojo::Server::Hypnotoad</h1>
+
+<p>Mojo::Server::Hypnotoad is a full featured <strong>UNIX optimized</strong> preforking async io HTTP 1.1 and WebSocket server built around the very well tested and reliable Mojo::Server::Daemon with TLS, Bonjour, epoll, kqueue and <strong>hot deployment</strong> support that just works.</p></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content commandline incremental" ref="intro/01_slide/76">
+<h1>All glory to the hypnotoad</h1>
+
+<pre><code><code class="command">$ hypnotoad hello.pl</code><code class="result">
+Server available at http://*:8080.
+</code></code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/77">
+<h1>Mojo::Server::Hypnotoad</h1>
+
+<h2>hypnotoad.conf</h2>
+
+<pre class="sh_Perl"><code>{listen =&gt; ['http://*:8080'], workers =&gt; 4};</code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/78">
+<h2>Nginx</h2>
+
+<pre class="sh_Perl"><code>upstream myapp {
+    server 127.0.0.1:8080;
+}
+server {
+    listen 80;
+    server_name localhost;
+    location / {
+        proxy_read_timeout 300;
+        proxy_pass http://myapp;
+        proxy_set_header Host $http_host;
+        proxy_set_header 
+            X-Forwarded-For 
+            $proxy_add_x_forwarded_for;
+    }
+}</code></pre></div>
+</div><div class="slide" data-transition="scrollUp"><div class="content" ref="intro/01_slide/79">
+<h2>INT, TERM</h2>
+
+<h3>Shutdown server immediately</h3>
+
+<h2>QUIT</h2>
+
+<h3>Shutdown server gracefully.</h3>
+
+<h2>TTIN</h2>
+
+<h3>Increase worker pool by one.</h3>
+
+<h2>TTOU</h2>
+
+<h3>Decrease worker pool by one.</h3>
+
+<h2>USR2</h2>
+
+<h3>Attempt zero downtime software upgrade (hot deployment) without losing any incoming connections.</h3></div>
+</div><div class="slide" data-transition="toss"><div class="content" ref="intro/01_slide/80">
+<h1>Documentaci&#xF3;n</h1>
+
+<h2>http://mojolicio.us/perldoc</h2>
+
+<h2>https://github.com/kraih/mojo/wiki</h2></div>
+</div><div class="slide" data-transition="fade"><div class="content" ref="intro/01_slide/81">
+<h1>Gracias!</h1></div>
+</div>
+</div>
+
+</body>
+</html>
