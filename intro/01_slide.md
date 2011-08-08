@@ -1,16 +1,23 @@
 !SLIDE
-# Mojolicious 1.0 #
+# Mojolicious 1.x #
 ## The web in a box ##
 
-### Madrid.pm ###
-### 23/03/2011 ###
+### MaresmeDev ###
+### 01/04/2011 ###
 
 !SLIDE transition=fade
 # Mojolicious 1.x #
 ## Duct Tape For The HTML5 Web ##
 
-### Madrid.pm ###
-### 23/03/2011 ###
+### MaresmeDev ###
+### 01/04/2011 ###
+
+!SLIDE transition=fade
+# Mojolicious 1.15 #
+
+## Hola! ##
+### Diego Kuperman
+### @freekey
 
 !SLIDE transition=scrollLeft
 
@@ -727,10 +734,6 @@
     use Test::More tests => 3;
     use Test::Mojo;
 
-    use FindBin;
-    $ENV{MOJO_HOME} = "$FindBin::Bin/../";
-    require "$ENV{MOJO_HOME}/myapp.pl";
-
     my $t = Test::Mojo->new;
     $t->get_ok('/')
       ->status_is(200)
@@ -738,15 +741,10 @@
 
 !SLIDE transition=scrollUp
 # Testing
-### t/myapp.pl
 
     @@@ Perl
-    use Test::More tests => 3;
+    use Test::More tests => 6;
     use Test::Mojo;
-
-    use FindBin;
-    $ENV{MOJO_HOME} = "$FindBin::Bin/../";
-    require "$ENV{MOJO_HOME}/myapp.pl";
 
     my $t = Test::Mojo->new;
     $t->get_ok('/fun')
@@ -755,6 +753,10 @@
         'div#main > h1' => qr/fun/, 
         'Title has fun!'
       );
+
+    $t->post_form_ok('/foo' => {test => 123})
+      ->content_type_like(qr/json/)
+      ->json_content_is([1, 2, 3]);
 
 !SLIDE
 # Oneliners
@@ -932,7 +934,7 @@
 
 !SLIDE transition=fade
 # Mojo::Server::Hypnotoad
-Mojo::Server::Hypnotoad is a full featured **UNIX optimized** preforking async io HTTP 1.1 and WebSocket server built around the very well tested and reliable Mojo::Server::Daemon with TLS, Bonjour, epoll, kqueue and **hot deployment** support that just works.
+Mojo::Server::Hypnotoad is a full featured **UNIX optimized** preforking async io **HTTP 1.1** and **WebSocket** server built around the very well tested and reliable Mojo::Server::Daemon with TLS, Bonjour, epoll, kqueue and **hot deployment** support that just works.
 
 !SLIDE commandline incremental transition=scrollUp
 # All glory to the hypnotoad
@@ -989,6 +991,9 @@ Mojo::Server::Hypnotoad is a full featured **UNIX optimized** preforking async i
 # Documentación
 ## http://mojolicio.us/perldoc
 ## https://github.com/kraih/mojo/wiki
+
+!SLIDE transition=toss
+# Preguntas?
 
 !SLIDE transition=fade
 # Gracias!
