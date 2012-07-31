@@ -3,7 +3,7 @@
 use Mojolicious::Lite;
 
 # Documentation browser under "/perldoc" (this plugin requires Perl 5.10)
-plugin 'pod_renderer';
+plugin 'PODRenderer';
 
 get '/welcome' => sub {
     my $self = shift;
